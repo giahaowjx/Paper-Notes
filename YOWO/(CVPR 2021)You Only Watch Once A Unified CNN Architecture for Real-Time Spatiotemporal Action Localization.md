@@ -1,4 +1,4 @@
-# (CVPR 2021)You Only Watch Once: A Unified CNN Architecture for Real-Time Spatiotemporal Action Localization
+# You Only Watch Once: A Unified CNN Architecture for Real-Time Spatiotemporal Action Localization
 
 ## 1. 动机
 
@@ -142,7 +142,13 @@ LFB中包含了使用预先训练好的3D ResNeXt-101主干网络在视频的不
 
 ![fig_7](./img/fig_7.png)
 
+![fig_8](./img/fig_8.png)
 
+可以看到2D-CNN对图片中完整的空间信息较为敏感，而3D-CNN对正在发生运动的部分较为敏感，可以看出YOWO的两个输入分支能够分别提取空间和时序信息，两者将相互补充。
+
+![fig_9](./img/fig_9.png)
+
+其中下采样率表示输入帧之间的间隔，例如d=3时表示从24帧中采用得到8帧作为输入。越多的时序信息能够提升网络的性能。通过下采样虽然增加了输入帧的时间跨度，但是破坏了相邻输入帧的时间上下文联系，特别是对于持续时间很短的动作，一组时间跨度过长的输入帧会包含一些无关的视频帧，**这些视频帧对当前帧而言属于噪声**。
 
 **参考文献：**
 
