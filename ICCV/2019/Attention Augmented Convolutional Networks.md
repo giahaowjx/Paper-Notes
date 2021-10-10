@@ -82,3 +82,10 @@
 
 ## References
 
+待了解：
+
+[32] Image Transfer
+
+[29] An intriguing failing of convolutional neural networks and the coordconv solution
+
+[18] Music transformer
